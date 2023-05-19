@@ -38,10 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'places_remember.apps.PlacesRememberConfig',
-    'users.apps.UsersConfig',
 ]
 
-AUTH_USER_MODEL = 'users.CustomUser'
+AUTH_USER_MODEL = 'places_remember.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
