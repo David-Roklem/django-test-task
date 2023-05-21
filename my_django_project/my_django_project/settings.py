@@ -41,9 +41,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'places_remember.apps.PlacesRememberConfig',
+    'social_django',
 ]
 
 AUTH_USER_MODEL = 'places_remember.CustomUser'
+
+SOCIAL_AUTH_VK_OAUTH2_KEY = '51652381'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = '5cDp6Qbt1NtQvD6sibUw'
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.vk.VKOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -68,6 +77,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
             ],
         },
     },
@@ -131,3 +141,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# This is implemented for satisfying the python-social-auth
+# documentation recommendations
+# for the aformentioned lib and PostgreSQL to work properly
+SOCIAL_AUTH_JSONFIELD_ENABLED = True

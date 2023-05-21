@@ -8,3 +8,9 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.username
+
+
+# class StartPage(models.Model):
+#     '''This page will be shown to a new user'''
+#     username = models.CharField('Name of the user', max_length=100)
+#     photo = models.ImageField('')
