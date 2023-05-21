@@ -16,8 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from places_remember import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.index),
     path('', include('social_django.urls')),
 ]
