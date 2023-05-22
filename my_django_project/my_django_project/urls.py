@@ -22,5 +22,6 @@ from places_remember import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
-    path('', include('social_django.urls')),
+    path('', include('social_django.urls', namespace='social')),
+    path('oauth/', views.auth)
 ]
