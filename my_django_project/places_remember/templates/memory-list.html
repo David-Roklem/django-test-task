@@ -3,14 +3,19 @@
 {% block content %}
     <h1>Your memory list</h1>
     <div class="block-avatar">
-        <img src="{{ pic }}" alt="Avatar" class="avatar">
-        <h2>{{ name }}</h2>    
+        <img src="{{ pic }}" width="200" class="rounded float-start" alt="Avatar">
+        <!-- <img src="{{ pic }}" alt="Avatar" class="avatar"> -->
+        <h2>{{ name }}</h2>
     </div>
+    <p></p>
+    <div>
     <a href="/add-memory">Add memory</a>
+    </div>
     <div class="btn-logout">
         <a href="/logout">Logout</a>
     </div>
-    {% if memory_list %}
+    <div>
+      {% if memory_list %}
         <ul>
       {% for memory in memory_list %}
       <li class="remember">
@@ -25,5 +30,5 @@
     {% else %}
       <h2>You do not have any added memories yet.</h2>
     {% endif %} 
-
+    </div>
 {% endblock %}

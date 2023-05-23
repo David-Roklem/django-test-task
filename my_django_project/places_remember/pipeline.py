@@ -6,6 +6,7 @@ from .models import Userpic
 
 
 def choose_picture(vk_response):
+    print(vk_response)
     if (vk_response['count'] == 0):
         return None
     result = None
