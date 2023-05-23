@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Your memory list</h1>
+    <div class="block-avatar">
+        <img src="{{ pic }}" alt="Avatar" class="avatar">
+        <h2>{{ name }}</h2>    
+    </div>
+    <a href="/add-memory">Add memory</a>
+    <div class="btn-logout">
+        <a href="/logout">Logout</a>
+    </div>
+    {% if memory_list %}
+        <ul>
+      {% for memory in memory_list %}
+      <li class="remember">
+        <h3>{{ memory.title }}</h3> 
+        <p>{{ memory.comment }}</p>
+        <p <time datetime="{{ memory.date }}">{{ memory.date }}</time>.</p>
+      </li>
+      <hr>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <h2>You do not have any added memories yet.</h2>
+    {% endif %} 
+
+{% endblock %}

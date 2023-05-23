@@ -46,8 +46,9 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = 'places_remember.CustomUser'
 
-SOCIAL_AUTH_VK_OAUTH2_KEY = '51652381'
-SOCIAL_AUTH_VK_OAUTH2_SECRET = '5cDp6Qbt1NtQvD6sibUw'
+SOCIAL_AUTH_VK_OAUTH2_KEY = '51654616'
+SOCIAL_AUTH_VK_OAUTH2_SECRET = '8xV0qvyHFBcF3Azcfl4I'
+SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['photos']
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.vk.VKOAuth2',
@@ -146,3 +147,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # documentation recommendations
 # for the aformentioned lib and PostgreSQL to work properly
 SOCIAL_AUTH_JSONFIELD_ENABLED = True
+
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
+
+SOCIAL_AUTH_PIPELINE = (
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.social_auth.social_user',
+    'social.pipeline.user.get_username',
+    'social.pipeline.user.create_user',
+    'social.pipeline.social_auth.associate_user',
+    'social.pipeline.social_auth.load_extra_data',
+    'social.pipeline.user.user_details',
+    'places_remember.pipeline.store_userpic',
+)
