@@ -163,5 +163,3 @@ LOGOUT_REDIRECT_URL = "/"
 #     'social_core.pipeline.user.user_details',
 #     'places_remember.pipeline.store_userpic',
 # )
-
-# SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['photos']

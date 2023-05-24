@@ -1,7 +1,6 @@
 from django.contrib.auth import logout as auth_logout
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.core.paginator import Paginator
 
 from .forms import MemoryForm
 from .models import Memory, Userpic
@@ -15,19 +14,13 @@ def index(request):
         memories = Memory.objects.filter(author=username).order_by('-date')
         userpic = Userpic.objects.filter(username=username).first()
         pic = userpic.pic if userpic else None
-
-        memory_list = Memory.objects.all()
-        paginator = Paginator(memory_list, 2)
-        page_number = request.GET.get('page')
-        page_obj = paginator.get_page(page_number)
         return render(
             request,
             'memory-list.html',
             context={
                 'memory_list': memories,
                 'name': full_name,
-                'pic': pic,
-                'page_obj': page_obj
+                'pic': pic
             }
         )
     else:
