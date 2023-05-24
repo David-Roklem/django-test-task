@@ -14,9 +14,6 @@ def index(request):
         memories = Memory.objects.filter(author=username).order_by('-date')
         userpic = Userpic.objects.filter(username=username).first()
         pic = userpic.pic if userpic else None
-        print(f'full name {full_name}')  # empty
-        print(f'username {username}')  # in my case "admin"
-        print(f'pic {pic}')  # None
         return render(
             request,
             'memory-list.html',
@@ -47,4 +44,4 @@ def add_memory(request):
 
 def logout(request):
     auth_logout(request)
-    return redirect('/')
+    return HttpResponseRedirect('/')

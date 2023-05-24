@@ -24,7 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('', include('social_django.urls', namespace='social')),
-    # path('oauth/', views.auth)
     path('add-memory/', views.add_memory),
-    path('', TemplateView.as_view(template_name='index.html'), name='index'),
+    path('logout/', views.logout, name='logout'),
 ]

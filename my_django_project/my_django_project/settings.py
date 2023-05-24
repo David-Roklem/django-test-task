@@ -126,7 +126,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -170,3 +170,5 @@ SOCIAL_AUTH_DISCONNECT_PIPELINE = (
     'social_core.pipeline.disconnect.revoke_tokens',
     'social_core.pipeline.disconnect.disconnect'
 )
+
+SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['photos']
