@@ -1,45 +1,45 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="block-avatar">
-    <img src="{{ pic }}" width="200" class="rounded float-start" alt="Avatar">
-  </div>
-  
-  <br></br>
+<div class="block-avatar">
+  <img src="{{ pic }}" width="200" class="rounded float-start" alt="Avatar">
+</div>
 
-  <div>
-    <h2>{{ name }}</h2>
-  </div>
+<br></br>
 
-  <hr>
+<div>
+  <h2>{{ name }}</h2>
+</div>
 
-  <div>
-    <a href="/add-memory" class="btn btn-success btn-lg btn-block" role="button" aria-pressed="true">Add memory</a>
-  </div>
+<hr>
 
-  <br></br>
-  
-  <div>
-    <a href="/logout" class="btn btn-danger btn-lg btn-block" role="button" aria-pressed="true">Logout</a>
-  </div>
+<div>
+  <a href="/add-memory" class="btn btn-success btn-lg btn-block" role="button" aria-pressed="true">Add memory</a>
+</div>
 
-  <br></br>
+<br></br>
 
-  <div>
-    {% if memory_list %}
-    <h1>Your memory list</h1>
-      <ul>
-      {% for memory in memory_list %}
-        <li class="remember">
-        <h3>{{ memory.title }}</h3> 
-        <p>{{ memory.comment }}</p>
-        </li>
-      <hr>
-      {% endfor %}
-      </ul>
+<div>
+  <a href="/logout" class="btn btn-danger btn-lg btn-block" role="button" aria-pressed="true">Logout</a>
+</div>
 
-    {% else %}
-      <h2>You do not have any added memories yet.</h2>
-    {% endif %} 
-  </div>
+<br></br>
+
+<div>
+  {% if memory_list %}
+  <h1>Your memory list</h1>
+  <ul>
+    {% for memory in memory_list %}
+    <li class="remember">
+      <h3>{{ memory.title }}</h3>
+      <p>{{ memory.comment }}</p>
+    </li>
+    <hr>
+    {% endfor %}
+  </ul>
+
+  {% else %}
+  <h2>You do not have any added memories yet.</h2>
+  {% endif %}
+</div>
 {% endblock %}

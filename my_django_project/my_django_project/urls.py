@@ -19,7 +19,6 @@ from django.urls import path, include
 from places_remember import views
 from django.views.generic.base import TemplateView
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
