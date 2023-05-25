@@ -1,6 +1,5 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-import uuid  # Required for unique book instances
 
 
 class CustomUser(AbstractUser):
@@ -15,7 +14,8 @@ class Memory(models.Model):
     author = models.CharField(max_length=100, null=True)
     title = models.CharField(max_length=200)
     comment = models.TextField(max_length=1000)
-    date = models.DateField(null=True)
+    # lat = models.FloatField(blank=True, null=True)
+    # lng = models.FloatField(blank=True, null=True)
 
     def __str__(self):
         return '%s' % (self.title)

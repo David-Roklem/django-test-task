@@ -11,7 +11,7 @@ def index(request):
     if request.user.is_authenticated:
         full_name = user.get_full_name()
         username = user.username
-        memories = Memory.objects.filter(author=username).order_by('-date')
+        memories = Memory.objects.filter(author=username).order_by('-id')
         userpic = Userpic.objects.filter(username=username).first()
         pic = userpic.pic if userpic else None
         return render(
@@ -38,7 +38,8 @@ def add_memory(request):
             memory.author = request.user.username
             memory.title = form.cleaned_data['title']
             memory.comment = form.cleaned_data['comment']
-            memory.date = form.cleaned_data['date']
+            # memory.lat = request.GET.get('latitude')
+            # memory.lng = request.GET.get('longitude')
             memory.save()
             return HttpResponseRedirect('/')
     else:

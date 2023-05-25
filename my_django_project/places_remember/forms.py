@@ -19,6 +19,11 @@ class CustomUserChangeForm(UserChangeForm):
 
 
 class MemoryForm(forms.Form):
-    title = forms.CharField(max_length=100)
-    comment = forms.CharField(widget=forms.Textarea)
-    date = forms.DateField(initial=datetime.date.today)
+    title = forms.CharField(
+        max_length=100,
+        label='Заголовок'
+    )
+    comment = forms.CharField(
+        widget=forms.Textarea,
+        label='Описание'
+    )

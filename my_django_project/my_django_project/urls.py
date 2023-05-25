@@ -26,4 +26,5 @@ urlpatterns = [
     path('', include('social_django.urls', namespace='social')),
     path('add-memory/', views.add_memory),
     path('logout/', views.logout, name='logout'),
+    # path('save-location/', views.save_location),
 ]

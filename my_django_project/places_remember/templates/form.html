@@ -13,7 +13,10 @@
 }).addTo(map);
 
 map.on('click', (event) => {
-    L.marker([event.latlng.lat, event.latlng.lng]).addTo(map)
+    let lat = event.latlng.lat
+    let longitude = event.latlng.lng
+    L.marker([lat, longitude]).addTo(map)
+    // fetch(`/add-memory?latitude=${lat}&longitude=${longitude}`)
 })
 
 </script>
