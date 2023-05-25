@@ -37,4 +37,8 @@ This project follows the MIT license. See the [LICENSE](LICENSE) for details.
 
 
 # The problems I couldn't solve
+<<<<<<< HEAD
 During  my work on this project I've encountered some difficulties beyond my ***current*** knowledge and skills. Since this was my first touch of Django framework, I couldn't manage to close all the tasks in time. In particular, there no any tests covering the project. Also, I had some additional tasks, such as setting up CI/CD, deploying the project using Docker - all of these now are one of my educational priorities.
+=======
+During  my work on this project I've encountered some difficulties beyond my ***current*** knowledge and skills. Since this was my first touch of Django framework, I couldn't manage to close all the tasks in time. In particular, there no any tests covering the project. Also, I had some additional tasks, such as setting up CI/CD, deploying the project using Docker - all of these now are one of my educational priorities.
+>>>>>>> 33d59143d8a08135bb7f3d26d8672fd5a32c8ed1
