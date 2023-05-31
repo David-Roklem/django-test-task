@@ -4,6 +4,7 @@
 <hr>
 <div id="map" style="height: 300px; width: 300px"></div>
 
+<!-- Leaflet maps -->
 <script>
     var map = L.map('map').setView([43.5960, 39.7285], 13);
 
@@ -16,10 +17,14 @@
         let lat = event.latlng.lat
         let longitude = event.latlng.lng
         L.marker([lat, longitude]).addTo(map)
-        // fetch(`/add-memory?latitude=${lat}&longitude=${longitude}`)
+        const coord = {
+            'lat': lat,
+            'long': longitude,
+        }
+        fetch(`/get-location/?latitude=${lat}&longitude=${longitude}`)
     })
-
 </script>
+
 <br></br>
 <form method="post">
     {% csrf_token %}

@@ -1,9 +1,9 @@
 from django.contrib.auth import logout as auth_logout
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 
 from .forms import MemoryForm
-from .models import Memory, Userpic
+from .models import Memory, Userpic, Coordinates
 
 
 def index(request):
@@ -27,10 +27,19 @@ def index(request):
         return render(request, 'index.html', context={})
 
 
+def get_location(request):
+    if request.user.is_authenticated:
+        memory = Coordinates()
+        memory.lat = request.GET.get('latitude')
+        memory.lng = request.GET.get('longitude')
+        memory.save()
+        print(memory.lng, memory.lat)
+        return JsonResponse({})
+
+
 def add_memory(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect('/')
-
     if request.method == 'POST':
         form = MemoryForm(request.POST)
         if form.is_valid():
@@ -38,8 +47,6 @@ def add_memory(request):
             memory.author = request.user.username
             memory.title = form.cleaned_data['title']
             memory.comment = form.cleaned_data['comment']
-            # memory.lat = request.GET.get('latitude')
-            # memory.lng = request.GET.get('longitude')
             memory.save()
             return HttpResponseRedirect('/')
     else:
