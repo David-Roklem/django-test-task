@@ -13,7 +13,7 @@ jobs:
       - name: install dependencies
         run: |
           pip install poetry
-          make install
+          my_django_project/make install
       - name: run tests
         run: make pytest
       - name: Test & publish code coverage
