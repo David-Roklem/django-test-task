@@ -1,0 +1,26 @@
+name: CI
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+      - name: install dependencies
+        run: |
+          pip install poetry
+          make install
+      - name: run tests
+        run: make pytest
+      - name: Test & publish code coverage
+        uses: paambaati/codeclimate-action@v3.2.0
+        if: github.ref_name == 'main'
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: make cov
+          debug: true

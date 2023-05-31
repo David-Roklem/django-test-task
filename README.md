@@ -1,3 +1,8 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/6a275a4076558526c8dc/maintainability)](https://codeclimate.com/github/David-Roklem/django-test-task/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/6a275a4076558526c8dc/test_coverage)](https://codeclimate.com/github/David-Roklem/django-test-task/test_coverage)
+
+
+
 # Django-test-task
 Test task for a trainee position
 

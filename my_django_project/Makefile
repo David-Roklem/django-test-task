@@ -9,3 +9,9 @@ migrate:
 
 pytest:
 	poetry run pytest
+
+cov:
+	poetry run pytest --cov=places_remember/tests
+
+install:
+	poetry install
