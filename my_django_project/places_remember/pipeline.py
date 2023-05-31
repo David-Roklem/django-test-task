@@ -19,8 +19,7 @@ def choose_picture(vk_response):
     return result
 
 
-def store_userpic(
-        backend, strategy, details, response, user=None, *args, **kwargs):
+def store_userpic(response, user=None):
     if not user:
         return
 
