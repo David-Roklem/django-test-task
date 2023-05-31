@@ -13,14 +13,14 @@ jobs:
       - name: install dependencies
         run: |
           pip install poetry
-          my_django_project/make install
+          poetry install
       - name: run tests
-        run: make pytest
+        run: poetry run pytest
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.2.0
         if: github.ref_name == 'main'
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
-          coverageCommand: make cov
+          coverageCommand: poetry run pytest --cov=places_remember/tests
           debug: true
