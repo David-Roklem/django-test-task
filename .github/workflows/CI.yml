@@ -6,7 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Change dir
-        run: echo "🍏 This job's status is ${{ job.status }}."
+        run: |
+          ls ${{ github.workspace }}
       - uses: actions/checkout@v2
       - name: Set up Python
         uses: actions/setup-python@v2
