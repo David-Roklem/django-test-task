@@ -29,12 +29,41 @@ DB_PORT
 SOCIAL_AUTH_VK_OAUTH2_KEY
 SOCIAL_AUTH_VK_OAUTH2_SECRET
 ```
-This project uses PostgreSQL, so your should provide .env module with the need database settings
+This project uses PostgreSQL, so your should provide the needed database settings into the .env module.
 
 ## Makefile
 For your convenience, use "make name-of-command". E.g. command "make runserver" will execute "poetry run python manage.py runserver" (in more common case - "python manage.py runserver"). All the make commands are listed in django-test-task/my_django_project/Makefile.
 To run server use `make runserver` command in terminal (from "your dir"/my_django_project) `make migrations` and `make migrate` for the corresponding commands.
 
+
+## Steps for starting the project
+Step 1. Clone this repository:
+```
+git clone
+```
+
+Step 2. Install poetry:
+```
+pip install poetry
+```
+
+Step 3. Install the project dependencies:
+```
+poetry install
+```
+
+Step 4. Make migrations:
+```
+make migrations
+```
+```
+make migrate
+```
+
+Step 5. Run local server:
+```
+make runserver
+```
 
 ## Licence
 This project follows the MIT license. See the [LICENSE](LICENSE) for details.
