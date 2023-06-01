@@ -4,6 +4,10 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: my_django_project
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python
