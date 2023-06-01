@@ -5,7 +5,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     defaults:
-      run:
+      run: |
+        cd ..
         shell: bash
         
     steps:
