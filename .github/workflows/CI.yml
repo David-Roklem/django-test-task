@@ -16,7 +16,6 @@ jobs:
           poetry install
       - name: run tests
         run: |
-          cd my_django_project
           poetry run pytest
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.2.0
