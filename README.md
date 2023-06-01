@@ -70,4 +70,4 @@ This project follows the MIT license. See the [LICENSE](LICENSE) for details.
 
 
 # The problems I couldn't solve
-During  my work on this project I've encountered some difficulties beyond my ***current*** knowledge and skills. There were some additional tasks, such as setting up CI/CD, deploying the project using Docker - all of these now are one of my educational priorities.
+During  my work on this project I've encountered some difficulties beyond my ***current*** knowledge and skills. There were some additional tasks, such as setting up CI/CD, deploying the project using Docker - all of these now are one of my educational priorities..s
