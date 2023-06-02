@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["David-Roklem <roklem@mail.ru>"]
 readme = "README.md"
-packages = [{include = "my_django_project/my_django_project"}]
+packages = [{include = "my_django_project"},]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -15,6 +15,7 @@ social-auth-app-django = "^5.2.0"
 django-debug-toolbar = "^4.1.0"
 pytest-django = "^4.5.2"
 pytest-cov = "^4.1.0"
+flake8 = "^6.0.0"
 
 [build-system]
 requires = ["poetry-core"]

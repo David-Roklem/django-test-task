@@ -28,7 +28,8 @@ def store_userpic(response, user=None):
 
     user_id = response['user_id']
     token = response['access_token']
-    url = 'https://api.vk.com/method/photos.get?access_token={}&v=5.131&owner_id={}&album_id=profile'.format(token, user_id)
+    url = 'https://api.vk.com/method/photos.get?access_token={}&v=5.131&owner_id={}&album_id=profile'\
+        .format(token, user_id)
     picture = response.get('user_photo')
     try:
         vk_response = requests.get(url).json()['response']
