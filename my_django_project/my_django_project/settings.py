@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'places_remember.apps.PlacesRememberConfig',
-    'debug_toolbar',
     'social_django',
+    'places_remember',
+    'debug_toolbar',
 ]
 
 AUTH_USER_MODEL = 'places_remember.CustomUser'

@@ -12,14 +12,16 @@ def choose_picture(vk_response):
     if (vk_response['count'] == 0):
         return None
     result = None
-    for size in vk_response['items'][0]['sizes']:
+    for size in vk_response['items'][-1]['sizes']:
         if size['type'] == 'y':
             result = size['url']
 
     return result
 
 
-def store_userpic(response, user=None):
+def store_userpic(
+        backend, strategy, details, response, user=None, *args, **kwargs
+):
     if not user:
         return
 
