@@ -2,7 +2,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/6a275a4076558526c8dc/test_coverage)](https://codeclimate.com/github/David-Roklem/django-test-task/test_coverage)
 
 
-
+The [specification](https://github.com/David-Roklem/django-test-task/blob/main/Task-itself.md) for the task itself (Техническое задание).
 # Django-test-task
 Test task for a trainee position
 
@@ -17,7 +17,7 @@ It's recommended to use ***poetry*** as a package manager. It also includes virt
 Once you've created a directory for the project, cloned it and downloaded poetry use `poetry install` command to install all the needed dependecies.
 
 ### Executing program
-As this project uses [https://pypi.org/project/python-dotenv/](python-dotenv) library, first of all you need to configure your .env with the following Django settings variables according to your needs:
+As this project uses [python-dotenv](https://pypi.org/project/python-dotenv/) library, first of all you need to configure your .env with the following Django settings variables according to your needs:
 ```
 SECRET_KEY
 ALLOWED_HOSTS
